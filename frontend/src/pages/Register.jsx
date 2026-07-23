@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import api from "../services/api";
 
 function Register() {
@@ -30,7 +31,6 @@ function Register() {
         email: "",
         password: "",
       });
-
     } catch (error) {
       alert(error.response?.data?.message || "Something went wrong");
     }
@@ -49,7 +49,8 @@ function Register() {
           onChange={handleChange}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="email"
@@ -59,7 +60,8 @@ function Register() {
           onChange={handleChange}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="password"
@@ -69,12 +71,17 @@ function Register() {
           onChange={handleChange}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
-        <button type="submit">
-          Register
-        </button>
+        <button type="submit">Register</button>
       </form>
+
+      <br />
+
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 }
